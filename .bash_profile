@@ -14,3 +14,10 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 # Start graphical server on tty1 if not already running.
 [ "$(tty)" = "/dev/tty1" ] && ! pgrep -x Xorg >/dev/null && exec startx
+
+# Default programs
+export EDITOR="nvim"
+export TERMINAL="st"
+export BROWSER="firefox"
+export FILE="vifm"
+export READER="zathura"
