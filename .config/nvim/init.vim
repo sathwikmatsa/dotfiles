@@ -1,6 +1,7 @@
 call plug#begin(expand('~/.config/nvim/plugged'))
 Plug 'arcticicestudio/nord-vim'
 Plug 'junegunn/fzf.vim'
+Plug 'itchyny/lightline.vim'
 call plug#end()
 
 set number
@@ -23,11 +24,12 @@ set smartindent
 set cindent
 set laststatus=2
 set ruler
+set noshowmode
 set wrap
 set mouse=a
 set backspace=indent,eol,start
 set undofile
-set undodir=$HOME/.config/nvim/undodir
+set undodir=$HOME/.local/share/nvim/undodir
 set clipboard+=unnamedplus
 set wildmode=longest,list,full
 set splitbelow splitright
@@ -36,3 +38,9 @@ autocmd BufWritePre * %s/\s\+$//e
 
 let g:nord_cursor_line_number_background=1
 colorscheme nord
+
+let g:lightline={
+            \ 'colorscheme': 'nord',
+            \ 'separator': { 'left': "", 'right': "" },
+            \ 'subseparator': { 'left': '', 'right': '' },
+            \}
