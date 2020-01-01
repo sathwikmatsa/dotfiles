@@ -24,6 +24,6 @@ export READER="zathura"
 
 # FZF
 # Setting fd as the default source for fzf
-export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --color=always'
+export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --color=always --ignore-file ~/.ignore'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border --ansi'

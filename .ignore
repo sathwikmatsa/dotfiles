@@ -1,0 +1,6 @@
+.cargo
+.rustup
+.cache
+.mozilla
+.local/share
+.git
