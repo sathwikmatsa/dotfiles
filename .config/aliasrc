@@ -41,13 +41,13 @@ f()
 # fzf - xdg-open file
 o()
 {
-    fzf | xargs -r xdg-open;
+    fzf | awk '{printf("\"%s\"", $0);}' | xargs -r xdg-open;
 }
 
 # fzf - open file in vim
 vo()
 {
-    fzf | xargs -r $EDITOR;
+    fzf | awk '{printf("\"%s\"", $0);}' | xargs -r $EDITOR;
 }
 
 # fzf - xdg-open file, and cd
@@ -55,8 +55,8 @@ ocd()
 {
     local filepath
     filepath=$(fzf)
-    echo $filepath | xargs -r xdg-open;
-    [ ! -z $filepath ] && cd $(dirname $(readlink -f $filepath))
+    echo $filepath | awk '{printf("\"%s\"", $0);}' | xargs -r xdg-open;
+    [[ ! -z $filepath ]] && cd "$(dirname "$filepath")"
 }
 
 # fzf - open file in vim, and cd
@@ -64,8 +64,8 @@ vocd()
 {
     local filepath
     filepath=$(fzf)
-    echo $filepath | xargs -r $EDITOR;
-    [ ! -z $filepath ] && cd $(dirname $(readlink -f $filepath))
+    echo $filepath | awk '{printf("\"%s\"", $0);}' | xargs -r $EDITOR;
+    [[ ! -z $filepath ]] && cd "$(dirname "$filepath")"
 }
 
 ## fkill - kill process
