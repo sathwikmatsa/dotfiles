@@ -27,7 +27,7 @@ alias \
 	sdn="sudo shutdown -h now" \
 	p="sudo pacman" \
 
-
+# cd on quit for Vifm
 f()
 {
     local dst="$(command vifm --choose-dir - "$@")"
@@ -38,12 +38,40 @@ f()
     cd "$dst"
 }
 
-ed()
+# fzf - xdg-open file
+o()
 {
-    (find . .scripts -maxdepth 1 -type f && find .config -maxdepth 2 -type f) | fzf | xargs -r nvim;
+    fzf | xargs -r xdg-open;
 }
 
-ef()
+# fzf - open file in vim
+vo()
 {
-    find . -maxdepth 1 -type f | fzf | xargs -r nvim;
+    vim -o `fzf`;
+}
+
+# fzf - xdg-open file, and cd
+ocd()
+{
+    local filepath
+    filepath=$(fzf)
+    echo $filepath | xargs -r xdg-open;
+    [ ! -z $filepath ] && cd $(dirname $(readlink -f $filepath))
+}
+
+# fzf - open file in vim, and cd
+vocd()
+{
+    local filepath
+    filepath=$(fzf)
+    echo $filepath | xargs -r $EDITOR;
+    [ ! -z $filepath ] && cd $(dirname $(readlink -f $filepath))
+}
+
+## fkill - kill process
+## Similar to "kill -9 **" fzf default completion
+fkill() {
+    local pid
+    pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
+    echo $pid | xargs -r kill -${1:-9}
 }
