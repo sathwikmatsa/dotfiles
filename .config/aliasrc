@@ -47,7 +47,7 @@ o()
 # fzf - open file in vim
 vo()
 {
-    vim -o `fzf`;
+    fzf | xargs -r $EDITOR;
 }
 
 # fzf - xdg-open file, and cd
