@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "SF Mono:pixelsize=18:antialias=true:autohint=true";
+static char *font = "Inconsolata:pixelsize=25:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -93,7 +93,7 @@ unsigned int tabspaces = 8;
 	"#b48ead", /* magenta */
 	"#88c0d0", /* cyan    */
 	"#e5e9f0", /* white   */
- 
+
  	/* 8 bright colors */
 	"#4c566a", /* black   */
 	"#bf616a", /* red     */
@@ -103,9 +103,9 @@ unsigned int tabspaces = 8;
 	"#b48ead", /* magenta */
 	"#8fbcbb", /* cyan    */
 	"#eceff4", /* white   */
- 
+
  	[255] = 0,
- 
+
  	/* more colors can be added after 255 to use with DefaultXX */
 	"#2e3440", /* background */
 	"#d8dee9", /* foreground */
