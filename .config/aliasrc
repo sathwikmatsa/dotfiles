@@ -3,6 +3,8 @@
 alias sudo="sudo "
 alias vim="nvim" vimdiff="nvim -d"
 
+alias r="make clean && make && make run"
+
 # Verbosity and settings that you pretty much just always are going to want.
 alias \
 	bat="cat /sys/class/power_supply/BAT?/capacity" \
