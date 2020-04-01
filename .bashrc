@@ -14,7 +14,7 @@ set -o vi
 
 source ~/.config/aliasrc
 
-source /usr/share/fzf/key-bindings.bash
-source /usr/share/fzf/completion.bash
+source ~/.config/fzf/key-bindings.bash
+source ~/.config/fzf/completion.bash
 
 alias dotfiles='/usr/bin/git --git-dir=/home/sathwik/.dotfiles/ --work-tree=/home/sathwik'

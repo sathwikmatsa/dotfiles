@@ -6,6 +6,8 @@
 
 # Add .scripts to path
 PATH=$PATH:~/.scripts
+# Add local bin to path
+PATH=$PATH:~/.local/bin
 
 # set askpass program
 export SUDO_ASKPASS="$HOME/.scripts/dmenupass"
