@@ -69,11 +69,13 @@ static const char *nmcmd[]  = { "st", "-e", "nmtui", NULL };
 static const char *browsercmd[]  = { "firefox", NULL };
 static const char *incognitocmd[]  = { "firefox", "--private-window", NULL };
 static const char *lockcmd[]  = { "slock", NULL };
+static const char *screencapturecmd[] = {"screencapture", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_o,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,                       XK_s,      spawn,          {.v = screencapturecmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },

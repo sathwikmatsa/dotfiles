@@ -1,0 +1,3 @@
+#!/bin/sh
+
+ffmpeg -hide_banner -loglevel warning -f x11grab -video_size 1366x768 -i :0 -vframes 1 ~/images/screenshots/screen_`date +%F-%T`.png 2>&1 2>>~/images/screenshots/log
